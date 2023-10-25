@@ -23,7 +23,7 @@ export class AppComponent implements OnInit{
   };
   
   Receive_Pokemon = (data: any) => {
-    console.log(data)
     this.data = data;
+    
   };
 }
