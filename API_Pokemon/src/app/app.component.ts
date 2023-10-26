@@ -11,7 +11,7 @@ export class AppComponent implements OnInit{
   title = 'API_Pokemon';
   Pokemon_list: any[]=[];
   Poke_Obs!:Observable<any>;
-  data!: any[];
+  data!: any;
 
   constructor(public http: HttpClient){
 
