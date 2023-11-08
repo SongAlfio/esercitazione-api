@@ -19,19 +19,18 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): void {
     this.Poke_Obs = this.http.get("https://pokeapi.co/api/v2/type");
-    this.Poke_Obs.subscribe(this.Receive_Pokemon, this.getPokemon);
+    this.Poke_Obs.subscribe(this.Receive_Pokemon);
+
   };
   
   Receive_Pokemon = (data: any) => {
     this.data = data;
   };
 
-  getPokemon = (ID: any) =>
+  spezza(url:string)
   {
-    this.data = ID;
-    let pokemonID = this.http.get(ID,"/:id"); //Ottengo l'id dalla ParamMap
-    console.log (pokemonID); //Stampo su console
-    //this.service.getTrack() 
-
+    console.log(url);
+    return url.split("/")[6]
   }
+
 }

@@ -2,7 +2,7 @@
 <html>
     <body>
         <div *ngFor="let type of data.results" >
-            <a routerLink="['/Pokemon', type.url]">
+            <a routerLink="/Pokemon/{{spezza(type.url)}}">
                 {{type.name}}
                 <hr>
             </a>
