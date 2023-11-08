@@ -29,7 +29,6 @@ export class AppComponent implements OnInit{
 
   spezza(url:string)
   {
-    console.log(url);
     return url.split("/")[6]
   }
 
