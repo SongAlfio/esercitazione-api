@@ -1,1 +1,3 @@
+npm -g i @angular/cli@16
+
 ng serve --host 0.0.0.0 --port 4200 --disable-host-check true

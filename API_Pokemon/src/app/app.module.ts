@@ -4,11 +4,13 @@ import { HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { PokemonIdComponent } from './pokemon-id/pokemon-id.component';
 import { AppRoutingModule } from './app-routing.module';
+import { DetailComponent } from './detail/detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PokemonIdComponent
+    PokemonIdComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,

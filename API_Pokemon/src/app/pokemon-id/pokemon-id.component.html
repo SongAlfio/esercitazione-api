@@ -1,1 +1,12 @@
-<p>pokemon-id works!</p>
+<html>
+    <body>
+        <div *ngFor="let pokemon of data.pokemon" >
+                {{pokemon.pokemon.name|json}}
+                <hr>
+        </div>
+    </body>
+
+<router-outlet></router-outlet>
+
+
+</html>

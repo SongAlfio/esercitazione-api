@@ -12,21 +12,23 @@ import { Observable } from 'rxjs';
 export class PokemonIdComponent {
   Poke_Obs!:Observable<any>;
   data!: any;
+
   constructor(private route: ActivatedRoute, public http: HttpClient) { }
   
   ngOnInit() {
-    this.Poke_Obs = this.http.get("https://pokeapi.co/api/v2/type/");
-    this.Poke_Obs.subscribe(this.Receive_Pokemon);
-
-  
-    
     this.route.paramMap.subscribe(params => {
       var id = params.get('Id');
       console.log(id);
-      this.data = id
+
+      this.Poke_Obs = this.http.get("https://pokeapi.co/api/v2/type/"+id);
+      this.Poke_Obs.subscribe(this.Receive_Pokemon);
     });
   }
+
+
   Receive_Pokemon = (data: any) => {
     this.data = data;
   };
+
+
 }
