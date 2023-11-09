@@ -1,8 +1,10 @@
 <html>
     <body>
         <div *ngFor="let pokemon of data.pokemon" >
+            <a routerLink="/detail/{{spezza_Url(pokemon.pokemkon.url)}}">
                 {{pokemon.pokemon.name|json}}
                 <hr>
+            </a>
         </div>
     </body>
 

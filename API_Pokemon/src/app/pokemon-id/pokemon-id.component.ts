@@ -30,5 +30,8 @@ export class PokemonIdComponent {
     this.data = data;
   };
 
-
+  spezza_Url(url:string)
+  {
+    return url.split("/")[6]
+  }
 }
