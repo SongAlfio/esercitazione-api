@@ -42,6 +42,7 @@ export class PokemonIdComponent {
 
   spezza_Url(url:string)
   {
-    return url.split("/")[8]
+    console.log(url)
+    return url.split("/")[6]
   }
 }

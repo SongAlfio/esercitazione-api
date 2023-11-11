@@ -1,1 +1,26 @@
-<p>detail works!</p>
+<html>
+    <body>
+        normal from: <img [src]="data.sprites.other.home.front_default">
+        <hr>
+        shiny from: <img [src]="data.sprites.other.home.front_shiny">
+        <hr>
+        <div *ngFor="let pokemon of data.forms" >
+            name:    {{pokemon.name}}
+                <hr>
+        </div>
+        <div *ngFor="let pokemon of data.types" >
+            type{{pokemon.slot}}:    {{pokemon.type.name}}
+                <hr>
+        </div>
+<!--        <div *ngFor="let pokemon of data.sprites.other.home.front_default" >
+            {{pokemon}}
+            <img src="{{pokemon.front_default}}">
+                <hr>
+        </div>-->
+        
+    </body>
+
+<router-outlet></router-outlet>
+
+
+</html>
