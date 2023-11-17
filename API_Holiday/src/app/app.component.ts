@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { CalendarioService } from './calendario.service';
 
 @Component({
   selector: 'app-root',
@@ -9,20 +10,16 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent {
   title = 'API_Holiday';
-  Poke_Obs!:Observable<any>;
-  data!: any;
+  obsDay : Observable<Object>;
+  // faccio iniettare lo spotify service e faccio una ricerca
 
-  constructor(public http: HttpClient){
-
-  };
+  constructor(public Calendario : CalendarioService){
+    this.obsDay = Calendario.searchDay("IT",2001);
+    this.obsDay.subscribe((data)=>console.log(data)); //visualizzo la ricerca sulla console
+  } 
 
   ngOnInit(): void {
-    this.Poke_Obs = this.http.get("https://calendarific.com/api/v2/holidays?api_key=REw1dz8vOjrYiC3iyN4TmJtVEfil1Kty&country=IT&year=2023");
-    this.Poke_Obs.subscribe(this.Receive_Pokemon);
-
   };
   
-  Receive_Pokemon = (data: any) => {
-    this.data = data;
-  };
+
 }
