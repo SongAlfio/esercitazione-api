@@ -10,8 +10,8 @@ import { CalendarioService } from './calendario.service';
 })
 export class AppComponent {
   title = 'API_Holiday';
-  obsDay : Observable<Object>;
-  // faccio iniettare lo spotify service e faccio una ricerca
+  obsDay: Observable<Object>;
+  results: any
 
   constructor(public Calendario : CalendarioService){
     this.obsDay = Calendario.searchDay("IT",2001);
@@ -20,6 +20,13 @@ export class AppComponent {
 
   ngOnInit(): void {
   };
-  
+  submit(query:HTMLInputElement): void {
+    if (!query.value) {
+      return;
+    }
+    this.query = query.value;
+    this.obsDay = this.Calendario.searchDay(this.query, this.query);
+    this.obsDay.subscribe((data) => this.results = data); 
+  }
 
 }
