@@ -1,0 +1,19 @@
+<html>
+  <div *ngFor="let thing of data">
+    id: {{thing.id}}
+    <br>
+    name:{{thing.name}}
+    <br>
+    species: {{thing.species}}
+    <br>
+    <img [src]="thing.image" height="400px" width="300px">
+    <br>
+    wood: {{thing.wand.wood}}
+    <hr>
+
+  </div>
+
+</html>
+
+
+

@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'API_Holiday'`, () => {
+  it(`should have as title 'API_HarryPotter'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('API_Holiday');
+    expect(app.title).toEqual('API_HarryPotter');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('API_Holiday app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('API_HarryPotter app is running!');
   });
 });
