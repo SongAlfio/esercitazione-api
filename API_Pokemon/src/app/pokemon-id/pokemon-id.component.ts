@@ -25,8 +25,7 @@ export class PokemonIdComponent {
 
       this.Id_Obs = this.http.get("https://pokeapi.co/api/v2/type/"+id);
       this.Id_Obs.subscribe(this.Receive_Id);
-      this.Poke_Obs = this.http.get("https://pokeapi.co/api/v2/pokemon/");
-      this.Poke_Obs.subscribe(this.Receive_Pokemon);
+
     });
   }
 
@@ -35,9 +34,7 @@ export class PokemonIdComponent {
     this.data = data;
     console.log(data)
   };
-  Receive_Pokemon = (data: any) => {
-    this.PokeData = data;
-  };
+
 
 
   spezza_Url(url:string)
